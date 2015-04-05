@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="fitbird">
+<head>
+  <meta charset="utf-8">
+  <base href="/">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic">
+  <link rel="stylesheet" href="https://rawgit.com/angular/bower-material/master/angular-material.css">
+  <link rel="stylesheet" href="./css/app.css">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1" />
+  <title>FitBird</title>
+</head>
+<body layout="row" layout-sm="column" ng-controller="AppController as app">
+
+  <md-sidenav class="md-sidenav-left md-whiteframe-z3" md-component-id="left">
+    <!-- md-is-locked-open="$mdMedia('gt-sm')" -->
+    <md-toolbar>
+      <div flex class="md-toolbar-tools">
+        {{app.title}}
+      </div>
+    </md-toolbar>
+    <md-content flex role="navigation">
+      <md-card>
+        <md-card-content>
+          <a ng-link="users">Discover</a>
+        </md-card-content>
+      </md-card>
+    </md-content>
+  </md-sidenav>
+
+  <div flex layout-fill layout-align="top center">
+    <md-toolbar md-scroll-shrink>
+      <div class="md-toolbar-tools">
+        <span>{{app.title}}</span>
+        <md-button ng-click="toggleLeft()">
+          Menu
+        </md-button>
+        <span flex></span>
+      </div>
+    </md-toolbar>
+
+    <md-content>
+      <ng-viewport></ng-viewport>
+    </md-content>
+  </div>
+
+  <!-- Vendor Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0-beta.6/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0-beta.6/angular-animate.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0-beta.6/angular-aria.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0-beta.6/angular-resource.min.js"></script>
+  <script src="https://cdn.rawgit.com/angular/router/v0.5.0/dist/router.es5.js"></script>
+  <script src="https://rawgit.com/angular/bower-material/master/angular-material.js"></script>
+  <script src="polymer-modules/webcomponentsjs/webcomponents.min.js"></script>
+  <!-- FitBird Scripts -->
+  <script src="./app.js"></script>
+  <script src="./components/navigation/navigation.js"></script>
+  <script src="./components/user/user.js"></script>
+  <script src="./components/users/users.js"></script>
+  <script src="./js/services.js"></script>
+</body>
+</html>
